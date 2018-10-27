@@ -1,22 +1,36 @@
 var isPalindrome = function(head) {
-  let fast = head;
-  let slow = head;
-  let stack = [];
+  let result = [];
 
-  while (fast && fast.next) {
-    fast = fast.next.next;
-    stack.push(slow);
-    slow = slow.next;
-  }
-  
-  while (stack.length > 0) {
-    let currentNode = stack.pop();
-    if (currentNode.val !== slow.val) { return false }
-    slow = slow.next;
+  while (head) {
+    result.push(head.val);
+    head = head.next;
   }
 
-  return slow.next === null;
+  return palindrome(result);
 };
+
+function palindrome(array) {
+  let start = 0;
+  let end = array.length - 1;
+
+  while (start < end) {
+    let startVal = array[start];
+    let endVal = array[end];
+
+    if (startVal !== endVal) {
+      return false;
+    }
+
+    start++;
+    end--;
+  }
+
+  return true;
+}
+
+
+
+
 
 function ListNode(val) {
   this.val = val;
@@ -33,5 +47,5 @@ function generateNodes(...nodes) {
 
   return head;
 }
-let list = generateNodes(1, 2)
+let list = generateNodes(-129, -129)
 console.log(isPalindrome(list))
