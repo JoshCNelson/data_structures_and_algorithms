@@ -17,6 +17,9 @@ function binarySearch(array, target) {
   }
 
   return left;
+  
+  // Can do this if you need to return -1 for a value not in the array
+  //return array[left] === target ? left : -1;
 }
 
 //Recursive Binary Search
@@ -42,4 +45,4 @@ function binarySearchHelper(array, target, left=0, right=array.length - 1) {
 }
 
 
-//console.log(binarySearch([1, 2, 4, 6, 7, 8, 9, 10], 6));
+//console.log(binarySearch([1, 2, 4, 6, 7, 8, 9, 10], 4));
