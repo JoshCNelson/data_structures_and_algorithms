@@ -17,7 +17,7 @@ function binarySearch(array, target) {
   }
 
   return left;
-  
+
   // Can do this if you need to return -1 for a value not in the array
   //return array[left] === target ? left : -1;
 }
@@ -27,22 +27,21 @@ function binarySearch(array, target) {
   return binarySearchHelper(array, target, 0, array.length - 1);
 }
 
-function binarySearchHelper(array, target, left=0, right=array.length - 1) {
-  let mid = Math.floor( left + (right - left) / 2);
+function binarySearchHelper(array, target, left = 0, right = array.length - 1) {
+  let mid = Math.floor(left + (right - left) / 2);
   let midVal = array[mid];
-  
+
   if (right < left) {
     return -1;
-  } 
+  }
 
   if (midVal === target) {
     return mid;
-  } else if (target < midVal ) {
+  } else if (target < midVal) {
     return binarySearchHelper(array, target, left, mid - 1);
   } else {
     return binarySearchHelper(array, target, mid + 1, right);
   }
 }
 
-
-//console.log(binarySearch([1, 2, 4, 6, 7, 8, 9, 10], 4));
+console.log(binarySearch([1, 2, 4, 6, 7, 8, 9, 10], 8));
