@@ -15,7 +15,7 @@ function findMin(array, target) {
     let mid = Math.floor(lower + (upper - lower) / 2);
     let midVal = array[mid];
     let farthestRightVal = array[array.length - 1];
-    
+
     if (midVal === target) {
       return mid;
     } else if (midVal > target && farthestRightVal < target) {
@@ -28,9 +28,6 @@ function findMin(array, target) {
       upper = mid;
     }
   }
-  //console.log(array[lower], array[upper], target);
+
   return array[lower] < array[upper] ? array[lower] : array[upper];
 }
-
-console.log(findMin([4,5,6,7,0,1,2], 0));// 4
-console.log(findMin([4,5,6,7,0,1,2], 3));// -1
