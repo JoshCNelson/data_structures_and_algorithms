@@ -3,7 +3,10 @@
 ### Find the Pivot
 
 Problem Example
+- Leetcode: #153 Find Minimum in Rotated Sorted Array
+  - This is the cannonical example for this mental model
 - Leetcode: #33 Search in Rotated Sorted Array
+  - Uses the same principle as #153 but adds the extra step of needing to binary search after finding the pivot
 
 Works well for:
 - sorted arrays that have been rotated `[3,4,5,0,1,2]`
