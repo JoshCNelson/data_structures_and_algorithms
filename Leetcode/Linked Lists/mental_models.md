@@ -21,11 +21,7 @@ function cycleCheck(head) {
   // we loop until we hit one of the terminating conditions
   // 1) fast equals slow, we have a cycle
   // 2) fast finds a terminating node, not a cycle
-  while (true) {
-    if (fast.next === null || fast.next.next === null) {
-      return false;
-    }
-
+  while (fast.next !== null || fast.next.next == null) {
     fast = fast.next.next;
     slow = slow.next;
 
@@ -33,6 +29,8 @@ function cycleCheck(head) {
       return true;
     }
   }
+
+  return false
 }
 ```
 
