@@ -1,6 +1,14 @@
 # Mental Models
 
 ### Fast, Slow pointers
+Example Problems:
+- Leetcode: #141 Linked List Cycle
+- CTCI #2.8: Loop Detection
+  - This is a more advanced version of detecting a common loop
+    - Use fast/slow pointers to find the collision point on the loop
+    - This collision point will be equidistant from the head of the list and the starting point of the loop.
+    - Knowing this we move slow pointer back to the head and increment both fast and slow by 1 now until they meet at the same node, we now know that node is the start of the loop
+
 Works well for:
 - Determining whether a linked list is a cycle
 
@@ -73,6 +81,9 @@ function reverseList(head) {
 Problem Example
 - Leetcode: ?
 - CTCI Linked Lists 2.2: Find the kth to last node
+  - If we find the length of the LL we can find any kth node
+- CTCI Linked Lists 2.7: Find the intersection of 2 LL (if any exists)
+  - If we know the length of the 2 lists we can offset the longer LL to ensure we are checking for equality at the potential intersection points
 
 Works well for:
 - When we know what node we want relative to some point we don't know (e.g. we 2nd to last node but don't know the actual length of the list)
