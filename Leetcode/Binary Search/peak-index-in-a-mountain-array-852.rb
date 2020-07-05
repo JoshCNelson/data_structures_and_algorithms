@@ -2,15 +2,14 @@
 # @param {Integer[]} a
 # @return {Integer}
 def peak_index_in_mountain_array(a, left=0, right=a.length-1)
-  mid = left + (right - left) / 2
-  mid_val = a[mid]
+  return left if left >= right
 
-  if mid_val > a[mid - 1] && mid_val > a[mid + 1]
-    return mid
-  elsif mid_val < a[mid + 1] # go right
+  mid = left + (right - left) / 2
+
+  if a[mid] < a[mid + 1]
     return peak_index_in_mountain_array(a, mid + 1, right)
-  else # go left
-    return peak_index_in_mountain_array(a, left, mid - 1)
+  else
+    return peak_index_in_mountain_array(a, left, mid)
   end
 end
 
