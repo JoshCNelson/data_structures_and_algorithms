@@ -4,10 +4,8 @@ var nextGreatestLetter = function (letters, target, left = 0, right = letters.le
   if (left >= right) {
     if (letters[left] > target) {
       return letters[left];
-    } else if (left === letters.length - 1) { // we need to wrap around to the beginning
+    } else { // we need to wrap around to the beginning
       return letters[0];
-    } else {
-      return letters[left + 1];
     }
   }
 
